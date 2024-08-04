@@ -1,26 +1,27 @@
-
-var ul = document.getElementsByTagName("ul");
-var liWrapper = document.getElementsByClassName("li-wrapper");
-var li = document.getElementsByTagName("li");
-var button = document.getElementsByClassName("del-btn");
+var enterButton = document.getElementById("enter");
 var input = document.getElementById("userinput");
-var enter = document.getElementById("enter");
-
-function getInputTxt() {
-    console.log("hi");
-}
+var ul = document.getElementById("ulList");
 
 
-
-var submitBtn = enter.addEventListener("click", consoleHi(tull))
-
-function consoleHi(a){
-    console.log(a);
-}
-
-getInputTxt();
+enterButton.addEventListener("click", function(){
+    var liWrapper = document.createElement("div");
+    liWrapper.classList.add("li-wrapper");
+    var newLi = liWrapper.appendChild(document.createElement("li"));
+    newLi.appendChild(document.createTextNode(input.value));
+    var newButton = liWrapper.appendChild(document.createElement("button"));
+    newButton.classList.add("del-btn");
+    newButton.setAttribute("img","images/bin.png" );
+    ul.appendChild(liWrapper);
+})
 
 
 
 
-// It listens for events, then executes. 
+
+
+
+// NOTES
+// Godtar 2 parametere/argumenter ; addEventListener("event", "function")
+// Man kan ikke bruke en metode på en array, man må accesse
+// createElement
+// appendChild
